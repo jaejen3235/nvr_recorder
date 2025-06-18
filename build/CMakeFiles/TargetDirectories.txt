@@ -1,0 +1,3 @@
+/home/dainlab/idis/r2framework/r2framework_linux/nvr_recorder/build/CMakeFiles/nvr_recorder.dir
+/home/dainlab/idis/r2framework/r2framework_linux/nvr_recorder/build/CMakeFiles/edit_cache.dir
+/home/dainlab/idis/r2framework/r2framework_linux/nvr_recorder/build/CMakeFiles/rebuild_cache.dir

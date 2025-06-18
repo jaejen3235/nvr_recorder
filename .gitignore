@@ -1,0 +1,9 @@
+*.o
+*.a
+*.so
+*.out
+*.exe
+*.log
+nvr_recorder
+app/web/*
+output/*

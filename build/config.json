@@ -1,0 +1,11 @@
+{
+    "camera_list": [
+        0, 2, 7
+    ],
+    "nvr": {
+        "ip": "14.33.239.166",
+        "password": "1q2w3e4r.",
+        "port": 8020,
+        "user_id": "admin"
+    }
+}
