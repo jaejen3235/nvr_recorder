@@ -7,6 +7,9 @@
 nvr_recorder
 app/web/*
 output/*
+build/
+include/
+lib/
 
 #token
 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
