@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Live Cam View</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+  <style>
+    .video-row {
+      display: flex;
+      flex-wrap: wrap; /* 줄바꿈 허용 */
+      gap: 20px;
+      justify-content: center;
+    }
+  
+    .video-box {
+      text-align: center;
+      flex: 1 1 300px; /* 최소 너비 기준으로 줄바꿈 */
+      max-width: 640px;
+      min-width: 300px;
+    }
+  
+    video {
+      width: 100%; /* 박스 너비에 맞게 자동 조절 */
+      height: auto;
+    }
+  </style>
+  
+  
+</head>
+
+
+
+<body>
+  <div class="video-row">
+    <div class="video-box">
+      <h2>CAM 0</h2>
+      <video id="video0" width="640" height="360" controls muted></video>
+    </div>
+    <div class="video-box">
+      <h2>CAM 1</h2>
+      <video id="video1" width="640" height="360" controls muted></video>
+    </div>
+    <div class="video-box">
+      <h2>CAM 2</h2>
+      <video id="video2" width="640" height="360" controls muted></video>
+    </div>
+    <div class="video-box">
+      <h2>CAM 3</h2>
+      <video id="video3" width="640" height="360" controls muted></video>
+    </div>
+    <div class="video-box">
+      <h2>CAM 4</h2>
+      <video id="video4" width="640" height="360" controls muted></video>
+    </div>
+    <div class="video-box">
+      <h2>CAM 5</h2>
+      <video id="video5" width="640" height="360" controls muted></video>
+    </div>
+    <div class="video-box">
+      <h2>CAM 6</h2>
+      <video id="video6" width="640" height="360" controls muted></video>
+    </div>
+    <div class="video-box">
+      <h2>CAM 7</h2>
+      <video id="video7" width="640" height="360" controls muted></video>
+    </div>
+  </div>
+  
+  <br>
+  <button onclick="startPlayback()">▶ Start Live Stream</button>
+
+  <script>
+    function loadStream(videoId, url) {
+      const video = document.getElementById(videoId);
+      if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => {
+          video.play().catch(err => {
+            console.warn(`Autoplay failed for ${videoId}:`, err);
+          });
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+        video.addEventListener('loadedmetadata', () => {
+          video.play().catch(err => {
+            console.warn(`Autoplay fallback failed for ${videoId}:`, err);
+          });
+        });
+      }
+    }
+
+    function startPlayback() {
+      loadStream('video0', '/web/cam0/live.m3u8');
+      loadStream('video1', '/web/cam1/live.m3u8');
+      loadStream('video2', '/web/cam2/live.m3u8');
+      loadStream('video3', '/web/cam3/live.m3u8');
+      loadStream('video4', '/web/cam4/live.m3u8');
+      loadStream('video5', '/web/cam5/live.m3u8');
+      loadStream('video6', '/web/cam6/live.m3u8');
+      loadStream('video7', '/web/cam7/live.m3u8');
+    }
+  </script>
+</body>
+</html>

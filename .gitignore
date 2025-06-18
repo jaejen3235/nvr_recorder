@@ -5,13 +5,16 @@
 *.exe
 *.log
 nvr_recorder
-app/web/*
 output/*
-build/
-include/
+CMakeFiles/*
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+include/*
 lib/
+web/cam*.*
 
 #token
 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
 
-.Identifier
+*.Identifier
