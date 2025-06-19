@@ -14,7 +14,4 @@ include/*
 lib/
 web/cam*.*
 
-#token
-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
-
 *.Identifier
