@@ -4,103 +4,111 @@
   <meta charset="utf-8">
   <title>Live Cam View</title>
   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-
   <style>
     .video-row {
       display: flex;
-      flex-wrap: wrap; /* 줄바꿈 허용 */
+      flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
-  
+
     .video-box {
       text-align: center;
-      flex: 1 1 300px; /* 최소 너비 기준으로 줄바꿈 */
+      flex: 1 1 300px;
       max-width: 640px;
       min-width: 300px;
     }
-  
+
     video {
-      width: 100%; /* 박스 너비에 맞게 자동 조절 */
+      width: 100%;
       height: auto;
     }
+
+    button {
+      margin-top: 10px;
+    }
   </style>
-  
-  
 </head>
 
-
-
 <body>
-  <div class="video-row">
-    <div class="video-box">
-      <h2>CAM 0</h2>
-      <video id="video0" width="640" height="360" controls muted></video>
-    </div>
-    <div class="video-box">
-      <h2>CAM 1</h2>
-      <video id="video1" width="640" height="360" controls muted></video>
-    </div>
-    <div class="video-box">
-      <h2>CAM 2</h2>
-      <video id="video2" width="640" height="360" controls muted></video>
-    </div>
-    <div class="video-box">
-      <h2>CAM 3</h2>
-      <video id="video3" width="640" height="360" controls muted></video>
-    </div>
-    <div class="video-box">
-      <h2>CAM 4</h2>
-      <video id="video4" width="640" height="360" controls muted></video>
-    </div>
-    <div class="video-box">
-      <h2>CAM 5</h2>
-      <video id="video5" width="640" height="360" controls muted></video>
-    </div>
-    <div class="video-box">
-      <h2>CAM 6</h2>
-      <video id="video6" width="640" height="360" controls muted></video>
-    </div>
-    <div class="video-box">
-      <h2>CAM 7</h2>
-      <video id="video7" width="640" height="360" controls muted></video>
-    </div>
-  </div>
-  
-  <br>
-  <button onclick="startPlayback()">▶ Start Live Stream</button>
+  <div class="video-row" id="videoContainer"></div>
 
   <script>
-    function loadStream(videoId, url) {
-      const video = document.getElementById(videoId);
+    const availableCameras = [0, 2, 7]; // 실제 연결된 카메라
+    const hlsInstances = {}; // 각 카메라에 대한 HLS 인스턴스 저장
+
+    function createCamBox(camNum) {
+      const box = document.createElement('div');
+      box.className = 'video-box';
+
+      const title = document.createElement('h2');
+      title.innerText = `CAM ${camNum}`;
+
+      const video = document.createElement('video');
+      video.id = `video${camNum}`;
+      video.controls = true;
+      video.muted = true;
+
+      const btnPlay = document.createElement('button');
+      btnPlay.innerText = '▶ 재생';
+      btnPlay.onclick = () => loadStream(camNum);
+
+      const btnStop = document.createElement('button');
+      btnStop.innerText = '■ 정지';
+      btnStop.onclick = () => stopStream(camNum);
+
+      box.appendChild(title);
+      box.appendChild(video);
+      box.appendChild(btnPlay);
+      box.appendChild(btnStop);
+
+      return box;
+    }
+
+    function loadStream(camNum) {
+      const video = document.getElementById(`video${camNum}`);
+      const url = `/web/cam${camNum}/live.m3u8`;
+
+      if (hlsInstances[camNum]) {
+        console.warn(`CAM ${camNum} is already playing.`);
+        return;
+      }
+
       if (Hls.isSupported()) {
         const hls = new Hls();
         hls.loadSource(url);
         hls.attachMedia(video);
         hls.on(Hls.Events.MANIFEST_PARSED, () => {
           video.play().catch(err => {
-            console.warn(`Autoplay failed for ${videoId}:`, err);
+            console.warn(`Autoplay failed for CAM ${camNum}:`, err);
           });
         });
+        hlsInstances[camNum] = hls;
       } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
         video.src = url;
         video.addEventListener('loadedmetadata', () => {
           video.play().catch(err => {
-            console.warn(`Autoplay fallback failed for ${videoId}:`, err);
+            console.warn(`Fallback autoplay failed for CAM ${camNum}:`, err);
           });
         });
       }
     }
 
-    function startPlayback() {
-      loadStream('video0', '/web/cam0/live.m3u8');
-      loadStream('video1', '/web/cam1/live.m3u8');
-      loadStream('video2', '/web/cam2/live.m3u8');
-      loadStream('video3', '/web/cam3/live.m3u8');
-      loadStream('video4', '/web/cam4/live.m3u8');
-      loadStream('video5', '/web/cam5/live.m3u8');
-      loadStream('video6', '/web/cam6/live.m3u8');
-      loadStream('video7', '/web/cam7/live.m3u8');
+    function stopStream(camNum) {
+      const video = document.getElementById(`video${camNum}`);
+      if (hlsInstances[camNum]) {
+        hlsInstances[camNum].destroy();
+        delete hlsInstances[camNum];
+      }
+      video.pause();
+      video.removeAttribute('src');
+      video.load();
+    }
+
+    // 페이지 로드시 CAM 0~7 전체 박스 생성
+    for (let i = 0; i <= 7; i++) {
+      const box = createCamBox(i);
+      document.getElementById('videoContainer').appendChild(box);
     }
   </script>
 </body>
