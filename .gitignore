@@ -4,14 +4,20 @@
 *.out
 *.exe
 *.log
+
 nvr_recorder
+
 output/*
+
 CMakeFiles/*
+
 CMakeCache.txt
 Makefile
 cmake_install.cmake
-include/*
-lib/
-web/cam*.*
 
+include/*
+
+lib/
+
+web/cam*.*
 *.Identifier
