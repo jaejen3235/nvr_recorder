@@ -44,7 +44,7 @@ void streamFramesToHLS(int camId, int w, int h, const std::vector<RFrame>& frame
         fwrite(data, 1, frame.imageDataLength, pipe);
     }
 
-    fflush(pipe);
+    fflush(pipe); //닫 기
     pclose(pipe);
 
     std::cout << "[Info] HLS stream written for camera " << camId << " (" << frames.size() << " frames)\n";
