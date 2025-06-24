@@ -48,6 +48,76 @@ struct RecorderConfig {
 //     "camera_list": [0, 2, 7]
 // }
 
+#include <iostream>
+#include <fstream>
+#include <ctime>
+#include <iomanip>
+#include <sstream>
+#include <mutex>
+#include <filesystem>
+
+std::ofstream g_logFile;
+std::mutex g_logMutex;
+std::string g_logDate;
+// 로그 파일명 생성 (./logs/nvr_recorder_YYYYMMDD.log)
+std::string makeLogFilename() {
+    std::ostringstream oss;
+    std::time_t t = std::time(nullptr);
+    std::tm tm = *std::localtime(&t);
+    oss << "./logs/nvr_recorder_"
+        << std::put_time(&tm, "%Y%m%d") << ".log";
+    return oss.str();
+}
+
+void initLogDir() {
+    std::filesystem::create_directories("./logs");
+}
+
+void openLogFile() {
+    std::string filename = makeLogFilename();
+    g_logFile.open(filename, std::ios::app);
+    if (!g_logFile.is_open()) {
+        std::cerr << "[ERROR] 로그 파일 열기 실패: " << filename << std::endl;
+    }
+    g_logDate = filename.substr(filename.size() - 12, 8); // "YYYYMMDD"
+}
+
+void checkLogRotate() {
+    std::string curDate = makeLogFilename().substr(22, 8); // "YYYYMMDD"
+    if (curDate != g_logDate) {
+        g_logFile.close();
+        openLogFile();
+    }
+}
+
+void initLog() {
+    initLogDir();
+    openLogFile();
+}
+
+void logMsg(const std::string& msg) {
+    std::lock_guard<std::mutex> lock(g_logMutex);
+
+    checkLogRotate();
+
+    auto t = std::time(nullptr);
+    auto tm = *std::localtime(&t);
+
+    if (g_logFile.is_open()) {
+        g_logFile << std::put_time(&tm, "[%Y-%m-%d %H:%M:%S] ") << msg << std::endl;
+        g_logFile.flush();
+    }
+    std::cout << std::put_time(&tm, "[%Y-%m-%d %H:%M:%S] ") << msg << std::endl;
+}
+
+void closeLog() {
+    std::lock_guard<std::mutex> lock(g_logMutex);
+    if (g_logFile.is_open()) {
+        g_logFile.close();
+    }
+}
+
+
 // 전역 설정 및 인덱스
 RecorderConfig config;
 std::map<int, int> cameraFileIndices; // cameraId → 순환 인덱스
@@ -148,6 +218,7 @@ class WatchListener : public OnRcWatchListener {
     
             std::ostringstream cmd;
             cmd << "ffmpeg "
+                << "-loglevel error " //-loglevel quiet (로그 X)
                 << "-f image2pipe "
                 << "-use_wallclock_as_timestamps 1 "
                 << "-i - "
@@ -201,28 +272,7 @@ class WatchListener : public OnRcWatchListener {
         }
     
         void onStatusLoaded(int, const RWatchStatus& status) override {
-
-            // struct RCameraStatus {
-            //     int channel;
-            //     int camera;
-            //     std::string description;
-             
-            //     Rp::CameraState state; // Used for watch
-                 
-            //     bool isAvailableCameraAudioIn;
-            //     bool isAvailableCameraAudioOut;
-             
-            //     std::vector<RStreamInfo> streamInfo;
-             
-            //     bool isAvailablePTZMove; 
-            //     bool isAvailablePTZZoom; 
-            //     bool isAvailablePTZFocus;
-            //     bool isAvailablePTZIris;
-            //     bool isAvailablePTZPresetMove;
-            //     bool isAvailablePTZFocusOnePush;
-            //     bool isAvailablePTZLensReset;
-            //  };
-             
+            logMsg("WatchListener:onStatusLoaded");
             // 00. Check event type
             bool eventDetected = true;
             // 01. Process the event
@@ -321,12 +371,18 @@ public:
     void onNoFrameLoaded(int, const RDateTime) override {}
     void onReceiveDateList(int, const std::vector<RDate>&) override {}
     void onReceiveTimeList(int, const std::vector<int>&) override {}
-    void onReceiveEventList(int, const std::vector<REventInfo>&) override {}
-    void onReceiveSupportedEvents(int, const std::vector<int>&) override {}
+    void onReceiveEventList(int, const std::vector<REventInfo>&) override {
+        logMsg("SearchListener:onReceiveEventList");
+    }
+    void onReceiveSupportedEvents(int, const std::vector<int>&) override {
+        logMsg("SearchListener:onReceiveSupportedEvents");
+    }
     void onReceiveSegmentSpotList(int, const std::vector<RSegmentSpot>&) override {}
 };
 
 int main() {
+    initLog();
+    logMsg("==== NVR Recorder 시작 ====");
     // 설정 파일 로딩
     config = loadOrCreateConfig("config.json");
 
@@ -393,5 +449,7 @@ int main() {
     rc_core_cleanup_fen();
     std::this_thread::sleep_for(std::chrono::seconds(1));
 
+    logMsg("==== NVR Recorder 종료 ====");
+    closeLog();
     return EXIT_SUCCESS;
 }
