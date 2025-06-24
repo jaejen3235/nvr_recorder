@@ -181,7 +181,13 @@ class WatchListener : public OnRcWatchListener {
         void onFrameLoaded(int channel, const RFrame& frame) override {
             if (frame.imageFormat != Rp::IMAGE_FORMAT_RGB32 || frame.imageDataLength <= 0)
                 return;
-    
+
+            // Camera resolutions on the NVR
+            // std::cout << "[Frame] CAM " << frame.camera
+            // << " - Converted: " << frame.imageWidth << "x" << frame.imageHeight
+            // << ", Original: " << frame.originalWidth << "x" << frame.originalHeight
+            // << std::endl;
+
             openPipeIfNeeded(frame.camera);
             FILE* pipe = ffmpegPipes[frame.camera];
             if (!pipe) return;
@@ -194,7 +200,42 @@ class WatchListener : public OnRcWatchListener {
             }
         }
     
-        void onStatusLoaded(int, const RWatchStatus&) override {}
+        void onStatusLoaded(int, const RWatchStatus& status) override {
+
+            // struct RCameraStatus {
+            //     int channel;
+            //     int camera;
+            //     std::string description;
+             
+            //     Rp::CameraState state; // Used for watch
+                 
+            //     bool isAvailableCameraAudioIn;
+            //     bool isAvailableCameraAudioOut;
+             
+            //     std::vector<RStreamInfo> streamInfo;
+             
+            //     bool isAvailablePTZMove; 
+            //     bool isAvailablePTZZoom; 
+            //     bool isAvailablePTZFocus;
+            //     bool isAvailablePTZIris;
+            //     bool isAvailablePTZPresetMove;
+            //     bool isAvailablePTZFocusOnePush;
+            //     bool isAvailablePTZLensReset;
+            //  };
+             
+            // 00. Check event type
+            bool eventDetected = true;
+            // 01. Process the event
+            if (eventDetected) {
+
+                for(RCameraStatus cStatus : status.cameraStatusList){
+                    auto now = std::chrono::system_clock::now();
+                    std::cout << "[onStatusLoaded] CAM " << cStatus.camera
+                    << " - Description: " << cStatus.description << std::endl;
+                }
+                //saveEventClipForCamera(cameraId, now);
+            }
+        }
         void onRecvPTZPresetList(int, int, const std::vector<RPtzPreset>&) override {}
         void onAudioConnected(int) override {}
         void onAudioDisconnected(int, Rp::DisconnectReason) override {}

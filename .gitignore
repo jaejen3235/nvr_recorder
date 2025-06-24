@@ -4,6 +4,8 @@
 *.out
 *.exe
 *.log
+*.ts
+*.m3u8
 
 nvr_recorder
 
