@@ -46,3 +46,30 @@ target_link_libraries(nvr_recorder
     jpeg
     stdc++
 )
+
+# ---- nvr_search 추가 ----
+add_executable(nvr_search
+    nvr_search.cpp
+)
+
+target_link_libraries(nvr_search
+    R2Framework
+    ${Boost_SYSTEM_LIBRARY}
+    ${Boost_THREAD_LIBRARY}
+    ${Boost_FILESYSTEM_LIBRARY}
+    ${Boost_CONTAINER_LIBRARY}
+    avformat
+    avcodec
+    avutil
+    swscale
+    swresample
+    opus
+    ssl
+    crypto
+    iconv
+    pthread
+    dl
+    x264
+    jpeg
+    stdc++
+)

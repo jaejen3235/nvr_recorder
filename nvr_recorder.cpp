@@ -682,13 +682,6 @@ int main() {
     rc_watch_set_channel_camera_list(watchChannel, config.cameraList);
     std::cout << "[Watch] Watching cameras...\n";
 
-    //hls -> rtsp
-    // std::string hls_url = "http://localhost:8090/web/cam0/live.m3u8";
-    // std::string rtsp_url = "rtsp://127.0.0.1:8554/live";
-    // std::string cmd = "ffmpeg -re -i " + hls_url +
-    //                   " -c copy -f rtsp " + rtsp_url;
-    //system(cmd.c_str());
-
     //User Alarm Test (iNEX 이벤트 알람 수신용)
     start_tcp_server(8203);
     logMsg("==== UserAlarmTester 시작 ====");

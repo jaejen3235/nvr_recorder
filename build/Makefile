@@ -129,6 +129,19 @@ nvr_recorder/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_recorder.dir/build.make CMakeFiles/nvr_recorder.dir/build
 .PHONY : nvr_recorder/fast
 
+#=============================================================================
+# Target rules for targets named nvr_search
+
+# Build rule for target.
+nvr_search: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 nvr_search
+.PHONY : nvr_search
+
+# fast build rule for target.
+nvr_search/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_search.dir/build.make CMakeFiles/nvr_search.dir/build
+.PHONY : nvr_search/fast
+
 nvr_recorder.o: nvr_recorder.cpp.o
 .PHONY : nvr_recorder.o
 
@@ -152,6 +165,30 @@ nvr_recorder.s: nvr_recorder.cpp.s
 nvr_recorder.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_recorder.dir/build.make CMakeFiles/nvr_recorder.dir/nvr_recorder.cpp.s
 .PHONY : nvr_recorder.cpp.s
+
+nvr_search.o: nvr_search.cpp.o
+.PHONY : nvr_search.o
+
+# target to build an object file
+nvr_search.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_search.dir/build.make CMakeFiles/nvr_search.dir/nvr_search.cpp.o
+.PHONY : nvr_search.cpp.o
+
+nvr_search.i: nvr_search.cpp.i
+.PHONY : nvr_search.i
+
+# target to preprocess a source file
+nvr_search.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_search.dir/build.make CMakeFiles/nvr_search.dir/nvr_search.cpp.i
+.PHONY : nvr_search.cpp.i
+
+nvr_search.s: nvr_search.cpp.s
+.PHONY : nvr_search.s
+
+# target to generate assembly for a file
+nvr_search.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_search.dir/build.make CMakeFiles/nvr_search.dir/nvr_search.cpp.s
+.PHONY : nvr_search.cpp.s
 
 streamFramesToHLS.o: streamFramesToHLS.cpp.o
 .PHONY : streamFramesToHLS.o
@@ -186,9 +223,13 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... nvr_recorder"
+	@echo "... nvr_search"
 	@echo "... nvr_recorder.o"
 	@echo "... nvr_recorder.i"
 	@echo "... nvr_recorder.s"
+	@echo "... nvr_search.o"
+	@echo "... nvr_search.i"
+	@echo "... nvr_search.s"
 	@echo "... streamFramesToHLS.o"
 	@echo "... streamFramesToHLS.i"
 	@echo "... streamFramesToHLS.s"

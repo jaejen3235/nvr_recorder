@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /home/dainlab/idis/r2framework/r2framework_linux/nvr_recorder
 
 # The main recursive "all" target.
 all: CMakeFiles/nvr_recorder.dir/all
+all: CMakeFiles/nvr_search.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,6 +73,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/nvr_recorder.dir/clean
+clean: CMakeFiles/nvr_search.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -99,6 +101,32 @@ nvr_recorder: CMakeFiles/nvr_recorder.dir/rule
 CMakeFiles/nvr_recorder.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_recorder.dir/build.make CMakeFiles/nvr_recorder.dir/clean
 .PHONY : CMakeFiles/nvr_recorder.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/nvr_search.dir
+
+# All Build rule for target.
+CMakeFiles/nvr_search.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_search.dir/build.make CMakeFiles/nvr_search.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_search.dir/build.make CMakeFiles/nvr_search.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/dainlab/idis/r2framework/r2framework_linux/nvr_recorder/build/CMakeFiles --progress-num=4,5 "Built target nvr_search"
+.PHONY : CMakeFiles/nvr_search.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/nvr_search.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dainlab/idis/r2framework/r2framework_linux/nvr_recorder/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/nvr_search.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/dainlab/idis/r2framework/r2framework_linux/nvr_recorder/build/CMakeFiles 0
+.PHONY : CMakeFiles/nvr_search.dir/rule
+
+# Convenience name for target.
+nvr_search: CMakeFiles/nvr_search.dir/rule
+.PHONY : nvr_search
+
+# clean rule for target.
+CMakeFiles/nvr_search.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/nvr_search.dir/build.make CMakeFiles/nvr_search.dir/clean
+.PHONY : CMakeFiles/nvr_search.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
