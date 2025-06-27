@@ -463,6 +463,34 @@ CMakeFiles/nvr_recorder.dir/nvr_recorder.cpp.o: ../nvr_recorder.cpp \
   /usr/lib/llvm-14/include/c++/v1/__tree \
   /usr/lib/llvm-14/include/c++/v1/unordered_map \
   /usr/lib/llvm-14/include/c++/v1/__hash_table \
+  /usr/include/unistd.h \
+  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
+  /usr/include/x86_64-linux-gnu/bits/environments.h \
+  /usr/include/x86_64-linux-gnu/bits/confname.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
+  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
+  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
+  /usr/include/linux/close_range.h \
+  /usr/include/x86_64-linux-gnu/sys/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h \
+  /usr/include/x86_64-linux-gnu/bits/socket.h \
+  /usr/include/x86_64-linux-gnu/bits/socket_type.h \
+  /usr/include/x86_64-linux-gnu/bits/sockaddr.h \
+  /usr/include/x86_64-linux-gnu/asm/socket.h \
+  /usr/include/asm-generic/socket.h \
+  /usr/include/linux/posix_types.h \
+  /usr/include/linux/stddef.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
+  /usr/include/asm-generic/posix_types.h \
+  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
+  /usr/include/asm-generic/bitsperlong.h \
+  /usr/include/x86_64-linux-gnu/asm/sockios.h \
+  /usr/include/asm-generic/sockios.h \
+  /usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h \
+  /usr/include/netinet/in.h \
+  /usr/include/x86_64-linux-gnu/bits/in.h \
+  /usr/include/arpa/inet.h \
   ../include/RpType.pb.h \
   ../include/google/protobuf/port_def.inc \
   ../include/google/protobuf/port_undef.inc \
@@ -487,14 +515,6 @@ CMakeFiles/nvr_recorder.dir/nvr_recorder.cpp.o: ../nvr_recorder.cpp \
   /usr/include/x86_64-linux-gnu/sys/ucontext.h \
   /usr/include/x86_64-linux-gnu/bits/sigstack.h \
   /usr/include/x86_64-linux-gnu/bits/sigstksz.h \
-  /usr/include/unistd.h \
-  /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
-  /usr/include/x86_64-linux-gnu/bits/environments.h \
-  /usr/include/x86_64-linux-gnu/bits/confname.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
-  /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
-  /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  /usr/include/linux/close_range.h \
   /usr/include/x86_64-linux-gnu/bits/ss_flags.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
   /usr/include/x86_64-linux-gnu/bits/sigthread.h \
@@ -562,13 +582,6 @@ CMakeFiles/nvr_recorder.dir/nvr_recorder.cpp.o: ../nvr_recorder.cpp \
   /usr/include/x86_64-linux-gnu/asm/types.h \
   /usr/include/asm-generic/types.h \
   /usr/include/asm-generic/int-ll64.h \
-  /usr/include/x86_64-linux-gnu/asm/bitsperlong.h \
-  /usr/include/asm-generic/bitsperlong.h \
-  /usr/include/linux/posix_types.h \
-  /usr/include/linux/stddef.h \
-  /usr/include/x86_64-linux-gnu/asm/posix_types.h \
-  /usr/include/x86_64-linux-gnu/asm/posix_types_64.h \
-  /usr/include/asm-generic/posix_types.h \
   /usr/include/x86_64-linux-gnu/bits/statx-generic.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h \
   /usr/include/x86_64-linux-gnu/bits/types/struct_statx.h \
@@ -1171,18 +1184,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_statx_timestamp.h:
 
-/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
-
-/usr/include/x86_64-linux-gnu/asm/posix_types.h:
-
-/usr/include/linux/stddef.h:
-
-/usr/include/linux/posix_types.h:
-
-/usr/include/asm-generic/bitsperlong.h:
-
-/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
-
 /usr/include/asm-generic/int-ll64.h:
 
 /usr/include/asm-generic/types.h:
@@ -1206,6 +1207,30 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 ../include/google/protobuf/io/zero_copy_stream_impl_lite.h:
 
 ../include/google/protobuf/unknown_field_set.h:
+
+../include/google/protobuf/stubs/mutex.h:
+
+../include/google/protobuf/inlined_string_field.h:
+
+../include/google/protobuf/map_field_lite.h:
+
+../include/google/protobuf/has_bits.h:
+
+../include/google/protobuf/any.h:
+
+../include/google/protobuf/map_entry_lite.h:
+
+../include/google/protobuf/wire_format_lite.h:
+
+../include/google/protobuf/repeated_field.h:
+
+../include/google/protobuf/implicit_weak_message.h:
+
+../include/google/protobuf/io/zero_copy_stream.h:
+
+../include/google/protobuf/metadata_lite.h:
+
+../include/google/protobuf/message_lite.h:
 
 /usr/include/x86_64-linux-gnu/bits/uio_lim.h:
 
@@ -1281,6 +1306,8 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/optional:
 
+/usr/include/x86_64-linux-gnu/asm/posix_types.h:
+
 /usr/lib/llvm-14/include/c++/v1/__ranges/enable_borrowed_range.h:
 
 /usr/lib/llvm-14/include/c++/v1/__iterator/readable_traits.h:
@@ -1302,6 +1329,8 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/lib/llvm-14/include/c++/v1/cstdio:
 
 /usr/lib/llvm-14/include/c++/v1/iomanip:
+
+/usr/include/x86_64-linux-gnu/asm/bitsperlong.h:
 
 /usr/lib/llvm-14/include/c++/v1/__memory/construct_at.h:
 
@@ -1331,6 +1360,8 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/iterator:
 
+/usr/include/asm-generic/bitsperlong.h:
+
 /usr/lib/llvm-14/include/c++/v1/__concepts/arithmetic.h:
 
 /usr/lib/llvm-14/include/c++/v1/tuple:
@@ -1350,8 +1381,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/include/x86_64-linux-gnu/bits/pthread_stack_min-dynamic.h:
 
 /usr/lib/llvm-14/include/c++/v1/__locale:
-
-../include/google/protobuf/map_entry_lite.h:
 
 /usr/lib/llvm-14/include/c++/v1/__compare/is_eq.h:
 
@@ -1390,8 +1419,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/lib/llvm-14/include/c++/v1/__bit/bit_cast.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/reverse.h:
-
-../include/google/protobuf/repeated_field.h:
 
 /usr/lib/llvm-14/include/c++/v1/atomic:
 
@@ -1519,6 +1546,10 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/include/stdc-predef.h:
 
+../include/google/protobuf/parse_context.h:
+
+/usr/lib/llvm-14/include/c++/v1/__algorithm/sift_down.h:
+
 /usr/lib/llvm-14/include/c++/v1/__algorithm/partial_sort.h:
 
 /usr/include/linux/limits.h:
@@ -1595,6 +1626,8 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__utility/in_place.h:
 
+/usr/include/x86_64-linux-gnu/bits/socket_type.h:
+
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:
 
 /usr/lib/llvm-14/include/c++/v1/__concepts/assignable.h:
@@ -1647,8 +1680,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/local_lim.h:
 
-/usr/include/x86_64-linux-gnu/bits/wchar.h:
-
 /usr/include/x86_64-linux-gnu/gnu/stubs-64.h:
 
 ../include/google/protobuf/stubs/logging.h:
@@ -1695,6 +1726,14 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/replace.h:
 
+../include/google/protobuf/stubs/once.h:
+
+/usr/lib/llvm-14/include/c++/v1/__ranges/access.h:
+
+/usr/include/x86_64-linux-gnu/bits/time64.h:
+
+/usr/lib/llvm-14/include/c++/v1/__iterator/access.h:
+
 /usr/lib/llvm-14/include/c++/v1/__algorithm/remove_copy.h:
 
 /usr/lib/llvm-14/include/c++/v1/__concepts/convertible_to.h:
@@ -1713,13 +1752,13 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h:
 
-../include/google/protobuf/metadata_lite.h:
-
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
 
 /usr/lib/llvm-14/include/c++/v1/__functional/ranges_operations.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/__FILE.h:
+
+/usr/include/x86_64-linux-gnu/asm/sockios.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
 
@@ -1734,6 +1773,10 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/include/x86_64-linux-gnu/sys/select.h:
 
 /usr/lib/llvm-14/include/c++/v1/__filesystem/copy_options.h:
+
+/usr/include/x86_64-linux-gnu/bits/wchar.h:
+
+/usr/include/x86_64-linux-gnu/asm/socket.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/set_intersection.h:
 
@@ -1835,6 +1878,8 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__random/uniform_int_distribution.h:
 
+/usr/include/x86_64-linux-gnu/bits/types/struct_osockaddr.h:
+
 /usr/lib/llvm-14/include/c++/v1/__utility/auto_cast.h:
 
 /usr/lib/llvm-14/include/c++/v1/__mbstate_t.h:
@@ -1861,6 +1906,8 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__concepts/invocable.h:
 
+/usr/include/linux/stddef.h:
+
 /usr/lib/llvm-14/include/c++/v1/__algorithm/for_each_n.h:
 
 /usr/lib/llvm-14/include/c++/v1/__utility/piecewise_construct.h:
@@ -1870,8 +1917,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/lib/llvm-14/include/c++/v1/__algorithm/sort_heap.h:
 
 /usr/include/wctype.h:
-
-/usr/include/x86_64-linux-gnu/bits/long-double.h:
 
 /usr/lib/llvm-14/include/c++/v1/__concepts/common_reference_with.h:
 
@@ -1922,6 +1967,8 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/include/x86_64-linux-gnu/bits/sched.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
+
+/usr/include/x86_64-linux-gnu/asm/posix_types_64.h:
 
 /usr/include/x86_64-linux-gnu/bits/errno.h:
 
@@ -1981,6 +2028,10 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__functional/function.h:
 
+../include/google/protobuf/generated_message_util.h:
+
+/usr/lib/llvm-14/include/c++/v1/__functional/mem_fn.h:
+
 /usr/lib/llvm-14/include/c++/v1/__functional/pointer_to_unary_function.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/adjacent_find.h:
@@ -2000,14 +2051,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/lib/llvm-14/include/c++/v1/cmath:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/half_positive.h:
-
-/usr/lib/llvm-14/include/c++/v1/__ranges/access.h:
-
-/usr/include/x86_64-linux-gnu/bits/time64.h:
-
-/usr/lib/llvm-14/include/c++/v1/__iterator/access.h:
-
-../include/google/protobuf/stubs/once.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/clamp.h:
 
@@ -2049,12 +2092,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/find_end.h:
 
-/usr/include/asm-generic/posix_types.h:
-
-/usr/lib/llvm-14/include/c++/v1/__algorithm/shift_left.h:
-
-/usr/lib/llvm-14/include/c++/v1/__algorithm/find_first_of.h:
-
 /usr/lib/llvm-14/include/c++/v1/__algorithm/includes.h:
 
 /usr/include/x86_64-linux-gnu/bits/siginfo-consts-arch.h:
@@ -2073,8 +2110,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/is_heap_until.h:
 
-/usr/lib/llvm-14/include/c++/v1/__algorithm/is_partitioned.h:
-
 /usr/lib/llvm-14/include/c++/v1/__algorithm/iter_swap.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/lexicographical_compare.h:
@@ -2083,13 +2118,13 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/merge.h:
 
-/usr/include/x86_64-linux-gnu/sys/ucontext.h:
-
 /usr/lib/llvm-14/include/c++/v1/__concepts/derived_from.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/mismatch.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/search.h:
+
+/usr/include/x86_64-linux-gnu/bits/in.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/next_permutation.h:
 
@@ -2123,10 +2158,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/replace_copy.h:
 
-/usr/include/x86_64-linux-gnu/sys/types.h:
-
-/usr/lib/llvm-14/include/c++/v1/__algorithm/replace_if.h:
-
 /usr/lib/llvm-14/include/c++/v1/__algorithm/move.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/reverse_copy.h:
@@ -2137,9 +2168,9 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/rotate_copy.h:
 
-/usr/include/asm-generic/errno.h:
-
 ../include/google/protobuf/generated_enum_reflection.h:
+
+/usr/include/asm-generic/errno.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/sample.h:
 
@@ -2156,10 +2187,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/lib/llvm-14/include/c++/v1/__ranges/data.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/set_difference.h:
-
-../include/google/protobuf/message_lite.h:
-
-../include/google/protobuf/map_field_lite.h:
 
 /usr/lib/llvm-14/include/c++/v1/__algorithm/set_symmetric_difference.h:
 
@@ -2192,10 +2219,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/lib/llvm-14/include/c++/v1/__debug:
 
 /usr/lib/llvm-14/include/c++/v1/__string:
-
-/usr/lib/llvm-14/include/c++/v1/__algorithm/sift_down.h:
-
-../include/google/protobuf/parse_context.h:
 
 /usr/lib/llvm-14/include/c++/v1/wctype.h:
 
@@ -2245,6 +2268,56 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/lib/llvm-14/include/c++/v1/__hash_table:
 
+/usr/include/unistd.h:
+
+/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
+
+/usr/lib/llvm-14/include/c++/v1/__iterator/prev.h:
+
+/usr/include/x86_64-linux-gnu/bits/confname.h:
+
+/usr/lib/llvm-14/include/c++/v1/type_traits:
+
+/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
+
+/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
+
+/usr/lib/llvm-14/include/c++/v1/__concepts/same_as.h:
+
+/usr/include/linux/close_range.h:
+
+/usr/lib/llvm-14/include/c++/v1/__algorithm/is_partitioned.h:
+
+/usr/include/x86_64-linux-gnu/sys/socket.h:
+
+/usr/include/x86_64-linux-gnu/sys/ucontext.h:
+
+/usr/include/x86_64-linux-gnu/bits/types/struct_iovec.h:
+
+/usr/include/x86_64-linux-gnu/bits/long-double.h:
+
+/usr/include/x86_64-linux-gnu/bits/socket.h:
+
+/usr/include/x86_64-linux-gnu/bits/sockaddr.h:
+
+/usr/include/x86_64-linux-gnu/sys/types.h:
+
+/usr/lib/llvm-14/include/c++/v1/__algorithm/replace_if.h:
+
+/usr/include/asm-generic/socket.h:
+
+/usr/include/linux/posix_types.h:
+
+/usr/lib/llvm-14/include/c++/v1/__algorithm/shift_left.h:
+
+/usr/lib/llvm-14/include/c++/v1/__algorithm/find_first_of.h:
+
+/usr/include/asm-generic/posix_types.h:
+
+/usr/include/asm-generic/sockios.h:
+
+/usr/include/netinet/in.h:
+
 ../include/RpType.pb.h:
 
 ../include/google/protobuf/port_undef.inc:
@@ -2269,6 +2342,8 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 
 /usr/include/x86_64-linux-gnu/bits/siginfo-arch.h:
 
+/usr/include/arpa/inet.h:
+
 /usr/include/x86_64-linux-gnu/bits/sigaction.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigcontext.h:
@@ -2278,24 +2353,6 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/include/x86_64-linux-gnu/bits/types/stack_t.h:
 
 /usr/include/x86_64-linux-gnu/bits/sigstack.h:
-
-/usr/include/unistd.h:
-
-/usr/include/x86_64-linux-gnu/bits/posix_opt.h:
-
-/usr/lib/llvm-14/include/c++/v1/__iterator/prev.h:
-
-/usr/include/x86_64-linux-gnu/bits/confname.h:
-
-/usr/lib/llvm-14/include/c++/v1/type_traits:
-
-/usr/include/x86_64-linux-gnu/bits/getopt_core.h:
-
-/usr/include/x86_64-linux-gnu/bits/unistd_ext.h:
-
-/usr/lib/llvm-14/include/c++/v1/__concepts/same_as.h:
-
-/usr/include/linux/close_range.h:
 
 /usr/include/x86_64-linux-gnu/bits/types.h:
 
@@ -2316,21 +2373,3 @@ CMakeFiles/nvr_recorder.dir/streamFramesToHLS.cpp.o: ../streamFramesToHLS.cpp \
 /usr/lib/llvm-14/include/c++/v1/unordered_set:
 
 ../include/google/protobuf/port.h:
-
-../include/google/protobuf/io/zero_copy_stream.h:
-
-../include/google/protobuf/implicit_weak_message.h:
-
-../include/google/protobuf/wire_format_lite.h:
-
-/usr/lib/llvm-14/include/c++/v1/__functional/mem_fn.h:
-
-../include/google/protobuf/generated_message_util.h:
-
-../include/google/protobuf/any.h:
-
-../include/google/protobuf/has_bits.h:
-
-../include/google/protobuf/inlined_string_field.h:
-
-../include/google/protobuf/stubs/mutex.h:
